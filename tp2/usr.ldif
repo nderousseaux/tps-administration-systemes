@@ -1,0 +1,184 @@
+
+dn: cn=jsmith,ou=Group,dc=example,dc=com
+cn: jsmith
+objectclass: posixGroup
+objectclass: top
+gidnumber: 1000
+
+dn: uid=jsmith,ou=People,dc=example,dc=com
+objectclass: top
+objectclass: inetOrgPerson
+objectclass: person
+objectclass: organizationalPerson
+objectclass: posixAccount
+objectclass: shadowAccount
+cn: John Smith
+sn: Smith
+uid: jsmith
+givenName: John
+userpassword: {SSHA}a2514721c0a47dcc2722156f001756e83445f690
+loginshell: /bin/bash
+gidnumber: 1000
+uidnumber: 1000
+homeDirectory: /home/jsmith !
+
+dn: cn=sparker,ou=Group,dc=example,dc=com
+cn: sparker
+objectclass: posixGroup
+objectclass: top
+gidnumber: 1001
+
+dn: uid=sparker,ou=People,dc=example,dc=com
+objectclass: top
+objectclass: inetOrgPerson
+objectclass: person
+objectclass: organizationalPerson
+objectclass: posixAccount
+objectclass: shadowAccount
+cn: Steven Parker
+sn: Parker
+uid: sparker
+givenName: Steven
+userpassword: {SSHA}641e1be5fa1c4f832308cb4221ae87c5d4764f36
+loginshell: /bin/bash
+gidnumber: 1001
+uidnumber: 1001
+homeDirectory: /home/sparker !
+
+dn: cn=bjensen,ou=Group,dc=example,dc=com
+cn: bjensen
+objectclass: posixGroup
+objectclass: top
+gidnumber: 1002
+
+dn: uid=bjensen,ou=People,dc=example,dc=com
+objectclass: top
+objectclass: inetOrgPerson
+objectclass: person
+objectclass: organizationalPerson
+objectclass: posixAccount
+objectclass: shadowAccount
+cn: Barbara Jensen
+sn: Jensen
+uid: bjensen
+givenName: Barbara
+userpassword: {SSHA}37e745b759245a155ca7acb0600f56ea0c64e94e
+loginshell: /bin/bash
+gidnumber: 1002
+uidnumber: 1002
+homeDirectory: /home/bjensen !
+
+dn: cn=smcadam,ou=Group,dc=example,dc=com
+cn: smcadam
+objectclass: posixGroup
+objectclass: top
+gidnumber: 1003
+
+dn: uid=smcadam,ou=People,dc=example,dc=com
+objectclass: top
+objectclass: inetOrgPerson
+objectclass: person
+objectclass: organizationalPerson
+objectclass: posixAccount
+objectclass: shadowAccount
+cn: Scott McAdam
+sn: McAdam
+uid: smcadam
+givenName: Scott
+userpassword: {SSHA}4629aecdba5e2138c83527fd956e4f240be9d68c
+loginshell: /bin/bash
+gidnumber: 1003
+uidnumber: 1003
+homeDirectory: /home/smcadam !
+
+dn: cn=pposit,ou=Group,dc=example,dc=com
+cn: pposit
+objectclass: posixGroup
+objectclass: top
+gidnumber: 1004
+
+dn: uid=pposit,ou=People,dc=example,dc=com
+objectclass: top
+objectclass: inetOrgPerson
+objectclass: person
+objectclass: organizationalPerson
+objectclass: posixAccount
+objectclass: shadowAccount
+cn: Paul Position
+sn: Position
+uid: pposit
+givenName: Paul
+userpassword: {SSHA}d3680659e60b33946c9e4182473e092354d6563e
+loginshell: /bin/bash
+gidnumber: 1004
+uidnumber: 1004
+homeDirectory: /home/pposit !
+
+dn: cn=npaloma,ou=Group,dc=example,dc=com
+cn: npaloma
+objectclass: posixGroup
+objectclass: top
+gidnumber: 1005
+
+dn: uid=npaloma,ou=People,dc=example,dc=com
+objectclass: top
+objectclass: inetOrgPerson
+objectclass: person
+objectclass: organizationalPerson
+objectclass: posixAccount
+objectclass: shadowAccount
+cn: Niña Paloma
+sn: Paloma
+uid: npaloma
+givenName: Niña
+userpassword: {SSHA}fe6987d8cf1e5cec1a1460cb08be7a6d5416c46f
+loginshell: /bin/bash
+gidnumber: 1005
+uidnumber: 1005
+homeDirectory: /home/npaloma !
+
+dn: cn=blee,ou=Group,dc=example,dc=com
+cn: blee
+objectclass: posixGroup
+objectclass: top
+gidnumber: 1006
+
+dn: uid=blee,ou=People,dc=example,dc=com
+objectclass: top
+objectclass: inetOrgPerson
+objectclass: person
+objectclass: organizationalPerson
+objectclass: posixAccount
+objectclass: shadowAccount
+cn: 白 李
+sn: 李
+uid: blee
+givenName: 白
+userpassword: {SSHA}d92b0442db54def2ba69277d0b6fa77ba1af4303
+loginshell: /bin/bash
+gidnumber: 1006
+uidnumber: 1006
+homeDirectory: /home/blee !
+
+dn: cn=dndiaye,ou=Group,dc=example,dc=com
+cn: dndiaye
+objectclass: posixGroup
+objectclass: top
+gidnumber: 1007
+
+dn: uid=dndiaye,ou=People,dc=example,dc=com
+objectclass: top
+objectclass: inetOrgPerson
+objectclass: person
+objectclass: organizationalPerson
+objectclass: posixAccount
+objectclass: shadowAccount
+cn: Diabou Ndiaye
+sn: Ndiaye
+uid: dndiaye
+givenName: Diabou
+userpassword: {SSHA}01802b653986e47a266d27ca723d4b5d661605b6
+loginshell: /bin/bash
+gidnumber: 1007
+uidnumber: 1007
+homeDirectory: /home/dndiaye !
