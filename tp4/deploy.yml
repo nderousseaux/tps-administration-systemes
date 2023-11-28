@@ -1,0 +1,32 @@
+---
+- name: Déploiement de FusionInventory agent
+  hosts: pc1, pc2, pc3
+  become: true
+
+  tasks:
+    - name: mise a jour
+      command:
+        apt update --allow-releaseinfo-change
+
+    - name: apt update
+      apt:
+        update_cache: yes
+
+    - name: Installation de fusionInventory
+      apt:
+        name: fusioninventory-agent
+        state: latest 
+
+    - name: Paramétrage de l'agent
+      lineinfile:
+        path: /etc/fusioninventory/agent.cfg
+        line: "server = http://192.168.57.98/glpi/plugins/fusioninventory/"
+
+    - name: demarrer le service 
+      service:
+        name: fusioninventory-agent
+        state: started
+
+    - name: demarrer service
+      command:
+        fusioninventory-agent 
