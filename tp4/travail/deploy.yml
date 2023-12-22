@@ -30,3 +30,20 @@
     - name: demarrer service
       command:
         fusioninventory-agent 
+
+    -  name: Installation de snmp
+       apt:
+         name: snmpd
+         state: latest
+    
+    - name: Paramétrage de snmp
+      lineinfile:
+        path: /etc/snmp/snmpd.conf
+        line: "agentAddress udp:161,udp6:[::1]:161"
+        line: "rocommunity example"
+        line: "agentAddress udp:161,udp6:[::1]:161"
+        
+    - name: demarrer le service
+      service:
+        name: snmpd
+        state: started

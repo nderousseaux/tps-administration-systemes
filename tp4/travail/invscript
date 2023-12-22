@@ -8,7 +8,7 @@ USER = 'glpi'
 PASSWORD = 'tprli'
 URL = 'http://192.168.57.98/glpi/apirest.php/'
 APP_TOKEN = '1b2c3d4e5f6g7h8i9j0k'
-NAGIOS_PATH = '/etc/nagios4/objects/'
+NAGIOS_PATH = '/etc/nagios4/objects/pc.cfg'
 
 def get_inventory():
 	# Création du token
@@ -60,21 +60,38 @@ def format_ansible(inv):
 	return res
 
 def write_cfg_each_host(inv):
-	""" On écrit un fichier de configuration par host
+	""" On écrit un fichier de configuration pour tout les hosts
 	"""
+	# On ouvre le fichier
+	f = open(NAGIOS_PATH, "w")
 	for host in inv:
-		# On ouvre le fichier
-		f = open(NAGIOS_PATH + host["name"] + ".cfg", "w")
-
 		# On écrit le fichier
 		f.write("define host {\n")
 		f.write("\tuse\tlinux-server\n")
 		f.write("\thost_name\t" + host["name"] + "\n")
 		f.write("\tcheck_interval\t1\n")
-		f.write("\t}")
+		f.write("\t}\n")
+
+
+	# On défini une commande check smtp
+	f.write("define command {\n")
+	f.write("\tcommand_name\tcheck_smtp\n")
+	f.write("\tcommand_line\t/usr/lib/nagios/plugins/check_smtp $HOSTADDRESS$\n")
+	f.write("\t}\n")
+
+	# On défini un service par host pour le check smtp
+	for host in inv:
+		f.write("define service {\n")
+		f.write("\tuse\tgeneric-service\n")
+		f.write("\thost_name\t" + host["name"] + "\n")
+		f.write("\tservice_description\tSMTP\n")
+		f.write("\tcheck_command\tcheck_smtp\n")
+		f.write("\t}\n")
 
 inv = get_inventory()
 
 inv_ansible = format_ansible(inv)
 
+print(inv_ansible)
 
+write_cfg_each_host(inv)
